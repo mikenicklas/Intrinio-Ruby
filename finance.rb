@@ -30,6 +30,6 @@ class Finance
 end
 
 ### USAGE EXAMPLES ###
-# a = Finance.new
+# a = Finance.new('<API USERNAME>', '<API PASSWORD>')
 # a.company('aapl')
 # puts a.price('aapl', {query: {sort_order: 'desc', start_date: '2012-01-01', end_date: '2012-12-31'}})
