@@ -1,6 +1,6 @@
 require 'httparty'
 
-class Finance
+class Intrinio
   include HTTParty
   base_uri 'https://www.intrinio.com/api/'
   
@@ -28,8 +28,3 @@ class Finance
     options.merge!(basic_auth: @auth)
   end
 end
-
-### USAGE EXAMPLES ###
-# a = Finance.new('<API USERNAME>', '<API PASSWORD>')
-# a.company('aapl')
-# puts a.price('aapl', {query: {sort_order: 'desc', start_date: '2012-01-01', end_date: '2012-12-31'}})
