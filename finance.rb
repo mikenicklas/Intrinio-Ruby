@@ -2,7 +2,6 @@ require 'httparty'
 
 class Finance
   include HTTParty
-  
   base_uri 'https://www.intrinio.com/api/'
   
   def initialize(username, password)
@@ -25,6 +24,7 @@ class Finance
   end
   
   def merge_auth(options)
+    # merge authenticatation parameters to each call
     options.merge!(basic_auth: @auth)
   end
 end
