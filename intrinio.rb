@@ -38,6 +38,9 @@ class Intrinio
       options.merge!(basic_auth: @auth)
     end
 end
+<<<<<<< HEAD
 
 a = Intrinio.new('7f37d417a9570173a92eafd9a25b3db0', '368a6fdca23b8c7bad1198ac81c30f32')
 puts a.standardized_fundamentals('aapl')
+=======
+>>>>>>> dev
