@@ -26,7 +26,10 @@ class Intrinio
   def standardized_fundamentals(ticker = nil, options = {})
     defaults = {  statement: "income_statement",
                   type: "FY" }
-    options[:query] = defaults
+    
+    # use default paremeters unless explicitly
+    # provided in method call
+    options[:query] = defaults unless options[:query]
     
     merge_auth(options)
     self.class.get("/fundamentals/standardized?ticker=#{ticker.upcase}", options) if ticker
@@ -38,9 +41,3 @@ class Intrinio
       options.merge!(basic_auth: @auth)
     end
 end
-<<<<<<< HEAD
-
-a = Intrinio.new('7f37d417a9570173a92eafd9a25b3db0', '368a6fdca23b8c7bad1198ac81c30f32')
-puts a.standardized_fundamentals('aapl')
-=======
->>>>>>> dev
